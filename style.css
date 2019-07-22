@@ -1,5 +1,12 @@
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: blue;
-    text-align: auto;
 }
+
+#temp, #cOrF, p {
+    display: inline;
+}
+
+h1, #loc {
+    color: skyblue;
+}
+

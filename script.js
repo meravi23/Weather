@@ -61,19 +61,45 @@ document.addEventListener("DOMContentLoaded", function (event) {
             .then(function (data) {
                 console.log(data);
                 var celcius = Math.round(parseFloat(data.main.temp) - 273.15);
-                document.getElementById('temp').innerHTML =  "Temperature: " + celcius + '&deg;';
+                document.getElementById('temp').innerHTML = "Temperature: " + celcius + '&deg;';
                 document.getElementById('weather-desc').innerHTML = "Current weather: " + data.weather[0].description;
                 document.getElementById('weather-image').src = "http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png";
             })
             .catch(function () {
-                alert ("error " + error.code);
+                alert("error " + error.code);
             });
+    }
+
+    document.getElementById('cOrF').addEventListener("click", toggleTemp);
+
+    function toggleTemp() {
+        let t = document.getElementById("cOrF");
+        let temp = (document.getElementById('temp').innerHTML).match(/\d+/)[0];
+        console.log("tempC: " + temp);
+        if (t.innerHTML == "C") {
+            t.innerHTML = "F";
+            document.getElementById('temp').innerHTML = "Temperature: " + convertToFahrenheit(temp) + '&deg;';
+        } else {
+            t.innerHTML = "C";
+            document.getElementById('temp').innerHTML = "Temperature: " + convertToCelsius(temp) + '&deg;';
+        }
     }
 
     var forecast = getWeatherByCoords();
 
-    function toggleTemp() {
-
+    function convertToFahrenheit(c) {
+        let f = Math.round((c*1.8)+32);
+        return f;
     }
+
+    function convertToCelsius(f) {
+        let c = Math.round(5/9*(f-32));
+        return c;
+    }
+
+    
+
+
+
 
 });
