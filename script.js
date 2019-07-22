@@ -30,8 +30,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                     for (let i = 0; i < results.length; i++) {
                         //console.log("result " + i + JSON.stringify(results[i]));
-                        console.log(results[i].types);
-                        console.log(results[i].formatted_address);
+                        //console.log(results[i].types);
+                        //console.log(results[i].formatted_address);
 
                         if (results[i].types[0] == 'locality') {
                             var city = results[i].formatted_address;
@@ -44,28 +44,36 @@ document.addEventListener("DOMContentLoaded", function (event) {
         })
     }
 
+    var cityName = getLocationName();
 
 
     // retrieve weather forecast for location
-    function getWeatherByCoords(lat, lon) {
-        var cityName = getLocationName();
+    function getWeatherByCoords() {
 
         //api.openweathermap.org/data/2.5/weather?q={city name},{country code}
         //api.openweathermap.org/data/2.5/weather?q=London,uk
         const OPEN_WEATHER_API_KEY = "b9f348e72127c9857ab6c279058b97fa";
         var query = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=" + OPEN_WEATHER_API_KEY;
+        console.log("Query: " + query);
 
         fetch(query)
             .then(function (resp) { return resp.json() }) // Convert data to json
             .then(function (data) {
                 console.log(data);
+                var celcius = Math.round(parseFloat(data.main.temp) - 273.15);
+                document.getElementById('temp').innerHTML =  "Temperature: " + celcius + '&deg;';
+                document.getElementById('weather-desc').innerHTML = "Current weather: " + data.weather[0].description;
+                document.getElementById('weather-image').src = "http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png";
             })
             .catch(function () {
-                // catch any errors
+                alert ("error " + error.code);
             });
     }
 
-    var forecast = getWeatherByCoords(lat, lon);
-    console.log(JSON.stringify(forecast));
-    
+    var forecast = getWeatherByCoords();
+
+    function toggleTemp() {
+
+    }
+
 });

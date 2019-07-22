@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Weather App</title>
-    <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASb67TwNRJjg5fEYo44irAOfytj5AXs0E">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASb67TwNRJjg5fEYo44irAOfytj5AXs0E">
     </script>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
@@ -15,19 +14,35 @@
 
 <body>
 
-    <h1>Vanilla JS Weather App</h1>
-    <div>
-        <h3>Current location</h3>
-        <h4 id="loc"></h4>
-        <img id="weather-image" />
-        <div id="map"></div>
+    <div class="container">
+        <div>
+            <h1 class="my-5">Weather App</h1>
+            <div>
+                <h3>Current location</h3>
+                <h4 id="loc"></h4>
+                <div id="map"></div>
+            </div>
+
+            <div class="my-3">
+                <h3>Current weather</h3>
+                <h4 id="temp">°<span id="toggleTemp" onclick="toggleTemp()">C</span></h4>
+                <h4 id="weather-desc"></h4>
+                <img id="weather-image" />
+            </div>
+        </div>
     </div>
 
-    <div>
-        <h3>Current weather</h3>
-        <h4 id="weather-desc"></h4>
-        <h4 id="temp">°<span>C</span></h4>
-    </div>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 </body>
 
