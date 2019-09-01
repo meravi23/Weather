@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     getWeatherByCoords();
 
 
-    document.getElementById('cOrF').addEventListener("click", toggleTemp);
+    document.getElementById('toggleTemp').addEventListener("click", toggleTemp);
 
     function toggleTemp() {
         let t = document.getElementById("cOrF");
@@ -68,31 +68,33 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     
 
-    // //convert coordinates to city/town/location name
-    // function getLocationName() {
-    //     var geocoder = new google.maps.Geocoder;
+    
+    /*
+    //convert coordinates to city/town/location name
+    function getLocationName() {
+        var geocoder = new google.maps.Geocoder;
 
-    //     geocoder.geocode({ 'location': pos }, function (results, status) {
-    //         if (status === 'OK') {
-    //             if (results) {
-    //                 console.log("results qty: " + results.length);
+        geocoder.geocode({ 'location': pos }, function (results, status) {
+            if (status === 'OK') {
+                if (results) {
+                    console.log("results qty: " + results.length);
 
-    //                 for (let i = 0; i < results.length; i++) {
-    //                     //console.log("result " + i + JSON.stringify(results[i]));
-    //                     //console.log(results[i].types);
-    //                     //console.log(results[i].formatted_address);
+                    for (let i = 0; i < results.length; i++) {
+                        //console.log("result " + i + JSON.stringify(results[i]));
+                        //console.log(results[i].types);
+                        //console.log(results[i].formatted_address);
 
-    //                     if (results[i].types[0] == 'locality') {
-    //                         var city = results[i].formatted_address;
-    //                         console.log(city);
-    //                         document.getElementById('loc').innerHTML = city;
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //     })
-    // }
+                        if (results[i].types[0] == 'locality') {
+                            var city = results[i].formatted_address;
+                            console.log(city);
+                            document.getElementById('loc').innerHTML = city;
+                        }
+                    }
+                }
+            }
+        })
+    }
 
-    // getLocationName();
-
+    getLocationName();
+    */
 });

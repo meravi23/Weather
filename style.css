@@ -6,6 +6,10 @@ body {
     display: inline;
 }
 
+p {
+    font-size: 1.5em;
+}
+
 h1, #loc {
     color: skyblue;
 }

@@ -6,9 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Weather App</title>
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASb67TwNRJjg5fEYo44irAOfytj5AXs0E">
-    </script> -->
-    <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -25,9 +22,16 @@
 
             <div class="my-3">
                 <h3>Current weather</h3>
-                <h4 id="temp"></h4><p id="cOrF">C</p>
+
                 <h4 id="weather-desc"></h4>
                 <img id="weather-image" />
+                <h4 id="temp"></h4>
+                <p id="cOrF">C</p>
+                <div>
+                    <button id="toggleTemp" type="button" class="btn btn-outline-secondary" data-toggle="button"
+                        aria-pressed="false" autocomplete="off">Toggle Celsius /
+                        Fahrenheit</button>
+                </div>
             </div>
         </div>
     </div>
@@ -43,6 +47,7 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
 
 </body>
 
